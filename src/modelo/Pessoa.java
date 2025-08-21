@@ -34,16 +34,13 @@ public class Pessoa {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        } else {
-            Pessoa pessoa = (Pessoa) o;
-            return Objects.equals(cpf, pessoa.cpf) && Objects.equals(nome, pessoa.nome);
-        }
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(nome, pessoa.nome) && Objects.equals(cpf, pessoa.cpf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpf, nome);
+        return Objects.hash(nome, cpf);
     }
 }
